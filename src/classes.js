@@ -1,5 +1,5 @@
 // todos, name, color
-export default class Project {
+export class Project {
     constructor(todos, name, color) {
         this.todos = todos;
         this.name = name;
@@ -10,5 +10,20 @@ export default class Project {
     }
     removeComplete() {
         this.todos = this.todos.filter((todo) => todo.complete);
+    }
+    removeTodo(todo){
+        // this.todos
+    }
+}
+
+export class Todo {
+    constructor(name, description, dueDate, priority) {
+        this.name = name;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+    }
+    markComplete(complete) {
+        this.complete = complete;
     }
 }
