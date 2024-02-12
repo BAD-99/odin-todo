@@ -112,18 +112,7 @@ function createTodo(todo) {
     li.append(checkbox, span);
 
     if (todo.dueDate !== undefined) {
-        const date = document.createElement('div');
-        date.classList.add('date');
-        const monthAndYear = document.createElement('div');
-        const month = document.createElement('div');
-        // month.textContent = todo.dueDate.toLocaleString('en-US', {month:'short'});
-        const year = document.createElement('div');
-        // year.textContent = todo.dueDate.getFullYear();
-        monthAndYear.append(month, year);
-        const day = document.createElement('div');
-        // day.textContent = todo.dueDate.getDate();
-        date.append(monthAndYear);
-        console.log((todo.dueDate));
+        const date = makeDate(todo.dueDate);
         // date.textContent = todo.dueDate;
         li.append(date);
     }
@@ -139,8 +128,11 @@ function createTodo(todo) {
     // todoList.append(li);
 }
 
-function makeDate(date){
-    let dt = date.split('^[T]')
+function makeDate(date) {
+    // let dt = date.split('^[T]')
+    const date = document.createElement('div');
+    date.textContent = date;
+    return date;
 }
 
 export function updateDisplay() { displayProjects(); displaySidebar(); }
